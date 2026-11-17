@@ -17,17 +17,36 @@ echo "    Maintained by: Chinmay Prakash Rout (ChinmayPrakashRout03)"
 echo "=================================================================="
 echo ""
 
-# 1. Download or update ~/.skillnote directory
-if [ -d "$INSTALL_DIR/.git" ]; then
+# 1. Check if a local clone already exists on the machine
+LOCAL_SOURCE=""
+if [ -f "./Agent Ide/install-all.sh" ]; then
+    LOCAL_SOURCE="$(pwd)"
+elif [ -f "$HOME/Downloads/skillsFORskillnote/Agent Ide/install-all.sh" ]; then
+    LOCAL_SOURCE="$HOME/Downloads/skillsFORskillnote"
+fi
+
+if [ -n "$LOCAL_SOURCE" ] && [ ! -d "$INSTALL_DIR/.git" ]; then
+    echo "▶ Detected local SkillNote repository at: $LOCAL_SOURCE"
+    echo "▶ Installing directly from local files (fast zero-latency setup)..."
+    rm -rf "$INSTALL_DIR"
+    mkdir -p "$INSTALL_DIR"
+    cp -R "$LOCAL_SOURCE/"* "$INSTALL_DIR/"
+    if [ -d "$LOCAL_SOURCE/.git" ]; then
+        cp -R "$LOCAL_SOURCE/.git" "$INSTALL_DIR/" 2>/dev/null || true
+    fi
+    echo "  ✔ Local files synced to $INSTALL_DIR"
+elif [ -d "$INSTALL_DIR/.git" ]; then
     echo "▶ Updating existing SkillNote installation in $INSTALL_DIR..."
     git -C "$INSTALL_DIR" pull --quiet origin main || true
 else
-    echo "▶ Downloading SkillNote to $INSTALL_DIR..."
-    mkdir -p "$INSTALL_DIR"
-    git clone --depth 1 "$REPO_URL" "$INSTALL_DIR" --quiet
+    echo "▶ Downloading SkillNote repository (~100MB, 3,786 skills)..."
+    echo "▶ Fetching from GitHub (live progress below):"
+    rm -rf "$INSTALL_DIR"
+    git clone --depth 1 --progress "$REPO_URL" "$INSTALL_DIR"
 fi
 
 # 2. Run master installation script
+echo ""
 echo "▶ Configuring all 5 Agent IDEs..."
 bash "$INSTALL_DIR/Agent Ide/install-all.sh"
 
