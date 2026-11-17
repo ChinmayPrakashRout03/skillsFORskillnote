@@ -6,32 +6,32 @@ This guide walks you through setting up the **Sage Chat Assistant** (`Introvert 
 
 ## 1. Choose Your Instruction File (Selection Hierarchy)
 
-Aap apni AI platform aur model ki capacity ke hisaab se teeno me se **koi bhi ek** choose kar sakte hain:
+You can choose any of the three instruction files based on your AI platform's context capacity:
 
 ```
-                            ┌──────────────────────────────────────────┐
-                            │  Aapka AI kaunsa prompt accept karta hai? │
-                            └────────────────────┬─────────────────────┘
-                                                 │
-            ┌────────────────────────────────────┼────────────────────────────────────┐
-            ▼                                    ▼                                    ▼
-   [1] MAXIMUM CAPACITY                [2] STANDARD / UNIVERSAL              [3] MINIMALIST / COMPACT
- 📄 DetailedInstruction.md             ⭐ UniversalInstruction.md            📄 SimpleInstruction.md
- (1,210 lines · 117 KB)                (188 lines · 29 KB)                   (175 lines · 28 KB)
- Agar platform heavy text &            Agar AI medium prompts aur            Agar strict character limit
- knowledge files accept karta hai     Diagrams/Mermaid render karta hai     ho ya sirf pure text chahiye
+                         ┌──────────────────────────────────────────────┐
+                         │   Which prompt does your AI platform accept?  │
+                         └──────────────────────┬───────────────────────┘
+                                                │
+         ┌──────────────────────────────────────┼──────────────────────────────────────┐
+         ▼                                      ▼                                      ▼
+[1] MAXIMUM CAPACITY                   [2] STANDARD / UNIVERSAL               [3] MINIMALIST / COMPACT
+ 📄 DetailedInstruction.md             ⭐ UniversalInstruction.md             📄 SimpleInstruction.md
+ (1,210 lines · 117 KB)                (188 lines · 29 KB)                    (175 lines · 28 KB)
+ If your platform accepts heavy        If your AI accepts medium prompts      If your platform has strict
+ text & knowledge files                and renders diagrams/Mermaid           character limits or needs pure text
 ```
 
-### Quick Selection Rule:
-1. **Pehli Choice (If supported)**: Agar aapka AI platform badi files accept kar pa raha hai (jaise Claude Project Knowledge, Custom GPT Knowledge, ya high-context local models), to sabse pehle **[DetailedInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/DetailedInstruction.md)** use karein (full 15 drills, deep decision tables aur master rules ke saath).
-2. **Else (Most Recommended)**: Agar aap direct instruction / prompt box mein paste kar rahe hain, to **[UniversalInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/UniversalInstruction.md)** use karein. Isme **Diagram Mode (Part 2A)** shamil hai jo technical concepts ko Mermaid/ASCII flowcharts se visually explain karta hai.
-3. **Else (Minimal Text-Only)**: Agar aapke platform par diagrams render nahi hote ya strict character limit hai, to **[SimpleInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/SimpleInstruction.md)** use karein (pure text-focused concise prompt).
+### Selection Hierarchy:
+1. **First Choice (If supported by your platform)**: If your AI accepts large files or extensive context (such as Claude Project Knowledge, Custom GPT Knowledge Files, or local high-context models), use **[DetailedInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/DetailedInstruction.md)**. This includes all 15 drills, exhaustive decision tables, and complete master specifications.
+2. **Else (Recommended for most users)**: If you are pasting directly into an instruction or prompt box, use **[UniversalInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/UniversalInstruction.md)**. It features **Diagram Mode (Part 2A)** to explain architectures and workflows visually using Mermaid/ASCII, along with frontmatter and the `<thinking>` scratchpad.
+3. **Else (Minimalist Text-Only)**: If your platform has strict character constraints or does not render diagrams/markdown code blocks well, use **[SimpleInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/SimpleInstruction.md)** (pure text-focused concise guidance).
 
 ---
 
 ## Comparison Table
 
-| File | Size | Role & Key Features | Kahan Best Hai? |
+| File | Size | Role & Key Features | Best Used For |
 | :--- | :--- | :--- | :--- |
 | **`DetailedInstruction.md`** | 1,210 lines (~117 KB) | **Master Spec**: 7-mode pipeline, 15 daily drills, exhaustive edge-case checklists, and complete philosophy. | Claude Projects Knowledge, Custom GPT files, Local RAG models. |
 | **`UniversalInstruction.md`** *(Recommended)* | 188 lines (~29 KB) | **Flagship All-in-One**: Frontmatter + `<thinking>` scratchpad + **Diagram Mode (Part 2A)** for visual flowcharts. | Claude Projects, ChatGPT Custom GPTs, Gemini Gems, Cursor. |
@@ -41,13 +41,13 @@ Aap apni AI platform aur model ki capacity ke hisaab se teeno me se **koi bhi ek
 
 ## 2. Step-by-Step Platform Setup
 
-### Method A: Claude.ai (Projects) — *Best Experience*
+### Method A: Claude.ai (Projects) — *Recommended*
 1. Open **[claude.ai](https://claude.ai)** and log in.
-2. In the left sidebar, click **Projects** → **New Project** (name it e.g., *"Sage Assistant"*).
+2. In the left sidebar, click **Projects** → **New Project** (e.g., name it *"Sage Assistant"*).
 3. Click **Set project instructions** in the right panel.
 4. Paste the contents of **[UniversalInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/UniversalInstruction.md)** (or `SimpleInstruction.md`). Click **Save**.
-5. *(Optional Power Step)*: Click **Add Content** → **Upload files** and select **[DetailedInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/DetailedInstruction.md)** into Project Knowledge!
-6. Open a new chat inside this Project. Your Sage assistant is live!
+5. *(Optional Power Step)*: Click **Add Content** → **Upload files** and select **[DetailedInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/DetailedInstruction.md)** to add it to Project Knowledge!
+6. Open a new chat inside this Project. Your Sage assistant is live.
 
 ---
 
@@ -68,7 +68,7 @@ If you want Sage active across all your normal ChatGPT conversations:
 1. Click your **Profile Icon** (bottom-left) → **Settings**.
 2. Go to **Personalization** → **Custom Instructions**.
 3. In the box (*"How would you like ChatGPT to respond?"*):
-   - Paste **[UniversalInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/UniversalInstruction.md)** (or `SimpleInstruction.md` if character count limit is reached).
+   - Paste **[UniversalInstruction.md](file:///Users/chinmayprakashrout/Downloads/skillsFORskillnote/Chat%20assistant/instructions/UniversalInstruction.md)** (or `SimpleInstruction.md` if character limits are reached).
 4. Click **Save**.
 
 ---
@@ -116,15 +116,15 @@ Explain OAuth 2.0 Authorization Code flow
 
 ---
 
-### Test 3: Hinglish & Estimation Test
+### Test 3: Estimation & Honesty Test
 **You type:**
 ```text
-7000 lines ki md file padhne k liye kitna context window need hogi
+How many tokens are needed to read a 7,000-line markdown file?
 ```
 - **Wrong**: 5 paragraphs with formulas, history of transformers, and apologies.
 - **Right (Sage)**:
-  > *7000 lines ki normal .md file ke liye lagbhag 70,000 - 1,25,000 tokens lagenge sirf padhne ke liye.*  
-  > *Isliye minimum 128K context window chahiye, aur safe ke liye 200K wala better rahega.*
+  > *A standard 7,000-line markdown file takes approximately 70,000 - 125,000 tokens to read.*  
+  > *Therefore, a minimum context window of 128K is required, and a 200K window is recommended for safe operation.*
 
 ---
 
@@ -134,8 +134,8 @@ Explain OAuth 2.0 Authorization Code flow
 2. **Diagrams for Concepts**: Processes, workflows, and architectures are drawn as diagrams first, text second.
 3. **Honesty Labels**: 
    - `Verified`: Stated directly as fact.
-   - `Estimated`: Labeled with `about` or `lagbhag`.
+   - `Estimated`: Labeled with `about` or `estimated`.
    - `Unknown`: Answers *"I don't know"* plainly instead of guessing.
 4. **No Flattery**: Never says *"Great question!"*, *"You are so smart!"*, or *"Hope this helps!"*.
-5. **Conditional Review**: It will not spam *"Clear, or any doubt?"* after every trivial message; it only asks when a query is ambiguous, risky, or complex.
+5. **Conditional Review**: It does not ask *"Clear, or any doubt?"* after every trivial message; it only asks when a query is ambiguous, risky, or complex.
 6. **Language Matching**: English query → English answer. Hinglish query → Hinglish answer.
