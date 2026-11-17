@@ -1,49 +1,25 @@
 ---
-description: "Master autonomous engineering engine. Supports /skillnote <prompt> (all skills across 32 categories) or /skillnote <category> (executes all skills inside that folder one by one)."
+description: "Master autonomous engineering engine. Supports /skillnote <prompt> or /skillnote <category>"
 argument-format: "[<category> | <prompt>]"
 ---
+Execute SkillNote on: $ARGUMENTS
 
-# /skillnote — OpenCode Autonomous Engineering Command
+**Directives for Assistant**:
+- If `$ARGUMENTS` is empty:
+  Display a concise menu:
+  `SkillNote Master Engine (by Chinmay Prakash Rout)`
+  - **Global Mode**: `/skillnote <your task>` (orchestrates across all 32 categories)
+  - **Targeted Category Pipeline**: `/skillnote <category>` (e.g. `/skillnote adapt`, `/skillnote secure`, `/skillnote engineer`, `/skillnote workflow`)
+  Ask the user what they would like to run.
 
-> **Curated & Maintained Solely by [Chinmay Prakash Rout](https://github.com/ChinmayPrakashRout03)**  
-> **Repository**: [https://github.com/ChinmayPrakashRout03/skillsFORskillnote](https://github.com/ChinmayPrakashRout03/skillsFORskillnote)
+- If `$ARGUMENTS` matches any category (adapt, assist, audit, automate, beautify, comprehend, contextualize, convert, create, curate, design, develop, engineer, execute, guide, humanize, manage, minimize, navigate, official, optimize, orchestrate, prototype, refine, secure, simplify, simulate, style, systematize, versatile, visualize, workflow):
+  Navigate to `Agent Ide/skills/<Category>/` and execute **all skills present in that folder sequentially, one by one**. Report progress after each skill.
 
-You are executing the **SkillNote Autonomous Engineering Engine** inside OpenCode CLI.
-
----
-
-## 🧭 Dynamic Routing Logic
-
-Check `$ARGUMENTS`:
-
-```
-KNOWN_CATEGORIES = [
-  "adapt", "assist", "audit", "automate", "beautify", "comprehend",
-  "contextualize", "convert", "create", "curate", "design", "develop",
-  "engineer", "execute", "guide", "humanize", "manage", "minimize",
-  "navigate", "official", "optimize", "orchestrate", "prototype",
-  "refine", "secure", "simplify", "simulate", "style", "systematize",
-  "versatile", "visualize", "workflow"
-]
-```
-
-### Path 1: Targeted Category Pipeline (`/skillnote <category>`)
-When the argument is any category from `KNOWN_CATEGORIES`:
-1. Navigate to the folder `Agent Ide/skills/<Category>/`.
-2. Execute **all skills present in that folder one by one in sequence**.
-3. For each skill:
-   - Announce: `▶ Running [<category>]: <skill-name>`
-   - Apply its checks, refactorings, or tests.
-   - Report progress and intermediate findings.
-4. Conclude with a final verification report and summary of savings.
-
-### Path 2: Global Orchestration (`/skillnote <prompt>`)
-When the argument is an arbitrary prompt or feature request:
-1. Orchestrate across all 32 capability categories.
-2. Execute the 6 phases:
-   - **Phase 1: Comprehend & Contextualize**: Map architecture, discover dependencies.
-   - **Phase 2: Architecture & Specification**: Technical design and Mermaid diagrams.
-   - **Phase 3: Implementation**: Clean, typed, modular code adhering to Guide rules.
-   - **Phase 4: Automation & Execution**: Automated test runs and execution checks.
-   - **Phase 5: Security & Refinement**: OWASP scan, secret check, anti-slop polish.
-   - **Phase 6: Delivery**: Final git commit review, verification summary.
+- If `$ARGUMENTS` is any other task/prompt:
+  Execute full-lifecycle engineering across all 32 categories:
+  1. Comprehend & Contextualize
+  2. Architecture & Design (Mermaid diagrams)
+  3. Clean, typed Implementation
+  4. Test automation & verification
+  5. Security audit (OWASP) & anti-slop refinement
+  6. Git delivery & humanized summary.
