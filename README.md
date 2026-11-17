@@ -423,40 +423,40 @@ Upstream repositories and revisions:
 
 Each repository's skills have been reorganized into a dedicated top-level folder named by its functional role:
 
-| Folder | Role / Category | Upstream Source Repository |
+| Folder | Role / Category | Working / What It Does |
 | :--- | :--- | :--- |
-| `Adapt/` | Adapt | `dietrichgebert/ponytail` (OpenClaw variant) |
-| `Assist/` | Assist | `github/awesome-copilot` |
-| `Audit/` | Audit | `cloudflare/security-audit-skill` |
-| `Automate/` | Automate | `aeonfun/aeon` |
-| `Beautify/` | Beautify | `Leonxlnx/taste-skill` |
-| `Comprehend/` | Comprehend | `Egonex-AI/Understand-Anything` |
-| `Contextualize/` | Contextualize | `muratcankoylan/Agent-Skills-for-Context-Engineering` |
-| `Convert/` | Convert | `virgiliojr94/book-to-skill` |
-| `Create/` | Create | `jwynia/agent-skills` |
-| `Curate/` | Curate | `ComposioHQ/awesome-claude-skills` |
-| `Design/` | Design | `pbakaus/impeccable` |
-| `Develop/` | Develop | `qodex-ai/ai-agent-skills` |
-| `Engineer/` | Engineer | `addyosmani/agent-skills` |
-| `Execute/` | Execute | `open-gsd/gsd-core` (Pi variant) |
-| `Guide/` | Guide | `multica-ai/andrej-karpathy-skills` |
-| `Humanize/` | Humanize | `udaysharmadev/Not-Ai` |
-| `Manage/` | Manage | `paperclipai/paperclip` |
-| `Minimize/` | Minimize | `dietrichgebert/ponytail` (main variant) |
-| `Navigate/` | Navigate | `mattpocock/skills` |
-| `Official/` | Official | `anthropics/skills` |
-| `Optimize/` | Optimize | `juliusbrussee/caveman` |
-| `Orchestrate/` | Orchestrate | `open-gsd/gsd-core` (Claude variant) |
-| `Prototype/` | Prototype | `KhazP/vibe-coding-prompt-template` |
-| `Refine/` | Refine | `miqdadbadjuber/anti-slop` |
-| `Secure/` | Secure | `usestrix/strix` |
-| `Simplify/` | Simplify | `ayghri/i-have-adhd` |
-| `Simulate/` | Simulate | `benjitaylor/skills` (stageshow) |
-| `Style/` | Style | `nextlevelbuilder/ui-ux-pro-max-skill` |
-| `Systematize/` | Systematize | `obra/superpowers` |
-| `Versatile/` | Versatile | `sickn33/agentic-awesome-skills` |
-| `Visualize/` | Visualize | `tt-a1i/archify` |
-| `Workflow/` | Workflow | `CloudAI-X/claude-workflow-v2` |
+| `Adapt/` | Adapt | Audits repository health, identifies shortcut debt, and applies senior-developer pragmatism. |
+| `Assist/` | Assist | Provides developer tooling assists, API integrations, and SDK workflow helpers. |
+| `Audit/` | Audit | Scans codebases for security vulnerabilities, exposed credentials, and compliance risks. |
+| `Automate/` | Automate | Generates automated CI/CD pipelines, autonomous triggers, and scheduled workflow actions. |
+| `Beautify/` | Beautify | Refines frontend visual harmony, typography, micro-interactions, and aesthetic craftsmanship. |
+| `Comprehend/` | Comprehend | Maps codebase knowledge graphs, explains architecture topology, and builds onboarding guides. |
+| `Contextualize/` | Contextualize | Mitigates context window degradation, models agent mental states, and optimizes prompt memory. |
+| `Convert/` | Convert | Ingests technical books, RFC specifications, and whitepapers to extract structured skills. |
+| `Create/` | Create | Bootstraps Architecture Decision Records (ADRs), autonomous subagents, and product strategies. |
+| `Curate/` | Curate | Builds Model Context Protocol (MCP) servers, HTML artifacts, and communication assets. |
+| `Design/` | Design | Architects responsive layouts, component state boundaries, and accessible design systems. |
+| `Develop/` | Develop | Constructs interactive components, browser automation frameworks, and QA test harnesses. |
+| `Engineer/` | Engineer | Formulates typed API contracts, resilient micro-services, and clean modular implementations. |
+| `Execute/` | Execute | Orchestrates autonomous milestone runs, tracks task progress, and manages Git worktrees. |
+| `Guide/` | Guide | Enforces strict project coding guidelines, Karpathy simplicity principles, and invariants. |
+| `Humanize/` | Humanize | Rewrites synthetic, robotic AI-generated text into clear, natural, human communication. |
+| `Manage/` | Manage | Automates pull request evaluations, issue lifecycle triage, and engineering roadmaps. |
+| `Minimize/` | Minimize | Prunes dead code, reduces cognitive overhead, and minimizes token and compute waste. |
+| `Navigate/` | Navigate | Traces codebase symbols, cross-file reference links, and module call hierarchies. |
+| `Official/` | Official | Provides official Anthropic foundational skills for document manipulation, data, and MCP. |
+| `Optimize/` | Optimize | Profiles runtime memory, optimizes SQL/NoSQL queries, and reduces compute latency bottlenecks. |
+| `Orchestrate/` | Orchestrate | Coordinates multi-agent swarms, cross-specialist handoffs, and phased execution gates. |
+| `Prototype/` | Prototype | Rapidly builds MVP slices, exploratory spikes, and verified feature prototypes. |
+| `Refine/` | Refine | Strips AI boilerplate, removes redundant comments, and purges generic UI slop. |
+| `Secure/` | Secure | Executes OWASP Top 10 penetration testing, auth boundary verification, and security patches. |
+| `Simplify/` | Simplify | Consolidates complex multi-step procedures into high-signal, accessible instructions. |
+| `Simulate/` | Simulate | Deploys interactive mock UI environments, faux backends, and fault-injection simulations. |
+| `Style/` | Style | Establishes design tokens, cohesive color palettes, typography scales, and CSS/Tailwind styles. |
+| `Systematize/` | Systematize | Drives test-driven development (TDD), verification before completion, and disciplined Git finish. |
+| `Versatile/` | Versatile | Delivers specialized domain implementations across 2,600+ languages, frameworks, and cloud tools. |
+| `Visualize/` | Visualize | Generates accurate Mermaid/ASCII architecture diagrams, dependency trees, and complexity maps. |
+| `Workflow/` | Workflow | Engineers full-stack cloud workflows, database schemas, API lifecycles, and DevOps infrastructure. |
 
 ---
 
