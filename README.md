@@ -460,6 +460,5 @@ Each repository's skills have been reorganized into a dedicated top-level folder
 
 ---
 
-> **Catalog & Audit References**:
+> **Catalog Reference**:
 > - Complete skills catalog and metadata: [`MANIFEST.csv`](MANIFEST.csv)
-> - Detailed audit log of pruned external skills: [`REMOVED_SKILLS.md`](REMOVED_SKILLS.md)
