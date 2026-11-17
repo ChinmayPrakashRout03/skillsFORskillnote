@@ -1,22 +1,38 @@
-# skillsFORskillnote
+# skillsFORskillnote — SkillNote Adaptive Cognitive Architecture
 
 > **Curated, standardized, and maintained solely and independently by [Chinmay Prakash Rout](https://github.com/ChinmayPrakashRout03)**  
 > **Repository**: [https://github.com/ChinmayPrakashRout03/skillsFORskillnote](https://github.com/ChinmayPrakashRout03/skillsFORskillnote)
+
+SkillNote equips autonomous AI coding agents (**Antigravity**, **Claude Code**, **OpenCode**, **OpenAI Codex**, and **ZCode**) with an **adaptive cognitive operating layer**.
+
+Standard AI agents often struggle with two common failure modes: either jumping into code without a clear architectural contract, or suffocating under massive prompt checklists that waste tokens, trigger context degradation, and produce fake compliance claims ("process theater"). SkillNote acts as the agent's **structured cognitive brain**—it classifies task complexity, queries a local pre-indexed SQLite FTS5 catalog to retrieve only the 1–3 required skills in `<1ms`, enforces safety gates on destructive actions, and requires real observable evidence (command exit codes and logs) before claiming success.
 
 ---
 
 ## ⚡ Quick Install (Zero Download Needed)
 
-Any user on macOS or Linux can install SkillNote across all AI coding agents (**Antigravity**, **Claude Code**, **OpenCode**, **OpenAI Codex**, and **Zed AI**) with a single terminal command — **without manually cloning or downloading the repository**:
+Install SkillNote across all active AI coding agents with a single command — **without manually cloning or downloading the repository**:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ChinmayPrakashRout03/skillsFORskillnote/main/install.sh | bash
 ```
 
 This automatically:
-1. Installs the **SkillNote Adaptive Runtime** and pre-indexed SQLite FTS5 catalog.
-2. Configures the `/skillnote` slash command across all active AI coding agents.
-3. Provides a global `skillnote` CLI command in your terminal (`skillnote search`, `skillnote route`, `skillnote verify`).
+1. Installs the **SkillNote Adaptive Runtime** and pre-indexed SQLite FTS5 catalog in `~/.skillnote`.
+2. Configures the `/skillnote` command across all active AI coding agents.
+3. Provides a global `skillnote` CLI utility (`skillnote search`, `skillnote route`, `skillnote verify`).
+
+---
+
+## 🧠 Why SkillNote: Real Engineering vs Process Theater
+
+| Dimension | Bare AI Agent | Naive Prompt Checklist | With SkillNote Adaptive Runtime |
+| :--- | :--- | :--- | :--- |
+| **Cognitive Approach** | Guesses intent, jumps straight to code | Rigid 14-step checklist for every 1-line edit | **4 Adaptive Modes** (Micro, Standard, Complex, Experimental) |
+| **Token Overhead** | 0 tokens (unguided) | +40k to +100k tokens per run (context bloat) | **Surgical Retrieval**: Top 1–3 skills via SQLite FTS5 in `<1ms` |
+| **Verification** | Asserts "done" with no proof | Generates fake compliance statements | **Observable Evidence**: Real commands, exit codes (`0`), durations & logs |
+| **Safety Invariants** | Blindly modifies/deletes files | Relies on user catching mistakes | **Consequential Gates**: Halts and prompts before destructive actions |
+| **Large Categories** | Cannot handle hundreds of skills | Context window overflows and crashes | **Relevance-Filtered by Default** (top 3–5 matching skills; `--all` optional) |
 
 ---
 

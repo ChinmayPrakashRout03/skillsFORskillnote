@@ -1,102 +1,132 @@
 ---
 name: skillnote
-description: Master autonomous engineering engine for SkillNote. Executes all 3,700+ skills globally for arbitrary prompts, or runs all skills inside a category folder sequentially one by one.
+description: Adaptive cognitive architecture and autonomous engineering runtime for AI agents. Provides task-complexity classification, on-demand SQLite FTS5 skill retrieval, safety gates, and observable verification across 32 specialized engineering domains.
 author: Chinmay Prakash Rout
 repository: https://github.com/ChinmayPrakashRout03/skillsFORskillnote
 ---
 
-# SkillNote — Autonomous Agent IDE Engine
+# SkillNote — Adaptive Cognitive Architecture for AI Coding Agents
 
-> **Curated, standardized, and maintained solely and independently by [Chinmay Prakash Rout](https://github.com/ChinmayPrakashRout03)**  
-> **Official Repository**: [https://github.com/ChinmayPrakashRout03/skillsFORskillnote](https://github.com/ChinmayPrakashRout03/skillsFORskillnote)
+SkillNote serves as an **adaptive cognitive operating layer** for AI coding agents (**Antigravity**, **Claude Code**, **OpenCode**, **OpenAI Codex**, and **ZCode**). 
 
-SkillNote transforms autonomous coding agents (**Claude Code**, **OpenAI Codex**, **Antigravity**, **OpenCode**, and **Z Code / Zed AI**) into master full-lifecycle software engineering teams.
-
----
-
-## ⚡ Core Operational Modes
-
-SkillNote operates via the `/skillnote` slash command and agent triggers in two distinct modes:
-
-### Mode 1: Global Orchestration (`/skillnote <prompt>`)
-When the argument is an arbitrary prompt, feature request, bug description, or project objective:
-- Activates the multi-phase engineering pipeline spanning all **32 capability folders**.
-- Dynamically assembles the relevant skills across:
-  1. **Comprehend & Contextualize** (`Comprehend`, `Contextualize`, `Navigate`)
-  2. **Architecture & Design** (`Design`, `Prototype`, `Visualize`, `Style`, `Beautify`)
-  3. **Implementation** (`Develop`, `Engineer`, `Create`, `Convert`)
-  4. **Automation & Execution** (`Automate`, `Execute`, `Workflow`, `Simulate`)
-  5. **Audit, Security & Cleanliness** (`Audit`, `Secure`, `Refine`, `Optimize`, `Minimize`, `Simplify`)
-  6. **Delivery & Systematization** (`Guide`, `Manage`, `Humanize`, `Systematize`, `Curate`, `Official`, `Adapt`)
-- Delivers complete, working, tested, and verified code with zero shortcuts.
-
-### Mode 2: Targeted Category Sequential Execution (`/skillnote <category>`)
-When the argument matches any of the **32 category folder names**:
-- Focuses exclusively on that category.
-- Loads and executes **all skills inside that folder sequentially, one by one**.
-- Never skips a skill; logs every transformation and check in order.
-- Produces a comprehensive summary report upon completing the pipeline.
+Standard AI agents typically oscillate between two extremes: jumping blindly into code without planning, or drowning in massive prompt checklists that waste tokens and produce simulated claims of success. SkillNote bridges this gap by giving the agent a structured cognitive brain: it classifies task complexity, pulls only the exact skills needed on demand, respects safety boundaries, and requires observable evidence before declaring work complete.
 
 ---
 
-## 🗂️ The 32 Category Directory
+## 🧠 Core Architecture: How the Cognitive Engine Operates
 
-| Category | Folder Path | Skills Count | Primary Focus |
-| :--- | :--- | :---: | :--- |
-| **Adapt** | `skills/Adapt/` | 6 | Senior-dev minimalism, shortcut debt removal, repo quality |
-| **Assist** | `skills/Assist/` | 447 | Broad library assists, API integrations, toolchain helpers |
-| **Audit** | `skills/Audit/` | 1 | Deep codebase vulnerability & security posture auditing |
-| **Automate** | `skills/Automate/` | 69 | Autonomous pipelines, auto-merging, cron hooks, triggers |
-| **Beautify** | `skills/Beautify/` | 1 | Tasteful frontend aesthetics, visual rhythm, microcopy |
-| **Comprehend**| `skills/Comprehend/` | 8 | Codebase indexing, knowledge graphs, architecture maps |
-| **Contextualize** | `skills/Contextualize/` | 20 | Context degradation mitigation, mental models, prompt tuning |
-| **Convert** | `skills/Convert/` | 1 | Converting specs, books, and RFCs into executable skills |
-| **Create** | `skills/Create/` | 113 | Architecture decision records, bootstrap agents, strategy |
-| **Curate** | `skills/Curate/` | 24 | MCP server creation, brand management, visual artifacts |
-| **Design** | `skills/Design/` | 1 | Frontend system design, layout architecture, typography |
-| **Develop** | `skills/Develop/` | 71 | Interactive components, QA frameworks, browser automation |
-| **Engineer** | `skills/Engineer/` | 25 | API design, observability, refactoring, quality constraints |
-| **Execute** | `skills/Execute/` | 72 | Multi-step autonomous plan execution and milestone verification |
-| **Guide** | `skills/Guide/` | 3 | Project coding standards, defensive patterns, Cursor rules |
-| **Humanize** | `skills/Humanize/` | 4 | Removal of AI slop/jargon from documentation and prose |
-| **Manage** | `skills/Manage/` | 60 | Pull request validation, issue triage, product evaluation |
-| **Minimize** | `skills/Minimize/` | 6 | Code reduction, token savings, senior engineering restraint |
-| **Navigate** | `skills/Navigate/` | 39 | Git safety guardrails, task decomposition, prototyping |
-| **Official** | `skills/Official/` | 13 | Core anthropic & foundational agent skills (MCP, Office, Art) |
-| **Optimize** | `skills/Optimize/` | 21 | Token compression, lean code generation, performance profiling |
-| **Orchestrate** | `skills/Orchestrate/`| 72 | Multi-agent coordination, execution plans, phase gates |
-| **Prototype** | `skills/Prototype/` | 11 | Rapid MVP validation, technical design, vertical slices |
-| **Refine** | `skills/Refine/` | 8 | AI slop removal, comment cleanup, human ergonomics |
-| **Secure** | `skills/Secure/` | 5 | Complete 5-stage defensive security, OWASP, pentesting, patch |
-| **Simplify** | `skills/Simplify/` | 1 | High-signal, scannable, ADHD-friendly documentation |
-| **Simulate** | `skills/Simulate/` | 1 | Realistic mock environments and simulation UIs |
-| **Style** | `skills/Style/` | 6 | Design systems, Tailwind/CSS styling, brand graphics, slides |
-| **Systematize**| `skills/Systematize/`| 15 | TDD, plan authoring, subagent dispatch, review triage |
-| **Versatile** | `skills/Versatile/` | 2,646 | Deep domain capabilities across languages, frameworks, cloud |
-| **Visualize** | `skills/Visualize/` | 5 | Mermaid/ASCII architecture diagrams, test value maps |
-| **Workflow** | `skills/Workflow/` | 14 | Complete modern cloud/web workflows, database, API, CI/CD |
+```
+                            ┌────────────────────────┐
+                            │    /skillnote [TASK]   │
+                            └───────────┬────────────┘
+                                        │
+                         [ 1. Task Complexity Classifier ]
+                                        │
+           ┌────────────────────────────┼────────────────────────────┐
+           ▼                            ▼                            ▼
+      [ MICRO ]                   [ STANDARD ]                 [ EXPERIMENTAL ]
+   Targeted fix                Plan ➔ Code ➔ Test          Hypothesis exploration
+  (Budget: ~3k tokens)        (Budget: ~20k tokens)         (Budget: ~20k tokens)
+           │                            │                            │
+           └────────────────────────────┼────────────────────────────┘
+                                        │
+                       [ 2. SQLite FTS5 Skill Router ]
+                 (Selects top 1–3 targeted skills in <1ms)
+                                        │
+                        [ 3. Safety & Approval Gate ]
+                 (Pauses for user approval on destructive actions)
+                                        │
+                     [ 4. Evidence Verification Engine ]
+                 (Executes real tests: exit code, duration, logs)
+                                        │
+                      [ 5. Observable Verification Report ]
+```
 
 ---
 
-## 🛠️ Step-by-Step Execution Rules for Agents
+## ⚡ Dual Execution Modes
 
-1. **Always Check the Category Argument First**:
-   - Normalize input: lowercase and strip punctuation.
-   - If it matches one of the 32 categories: switch to **Mode 2 (Targeted Sequential Pipeline)**.
-   - Otherwise: switch to **Mode 1 (Global Master Pipeline)**.
+### Mode 1: Adaptive Task Execution (`/skillnote <prompt>`)
+When passed a prompt, feature request, bug description, or architectural objective:
 
-2. **In Mode 2 (Targeted Pipeline)**:
-   - Announce: `▶ Initializing SkillNote Pipeline for Category: <Category>`
-   - Read the skill files sequentially from `Agent Ide/skills/<Category>/`.
-   - Apply the instructions of skill 1 -> log outcome -> apply skill 2 -> log outcome -> continue until all skills in the category have executed.
-   - Summarize the concrete outcomes, savings, and verifications in a structured report.
+1. **Complexity Classification**:
+   - **Micro Mode** (single-file fixes, typo corrections, isolated logic patches):
+     Bypasses heavy planning rituals. Touches only the target file, applies surgical edits, and executes the targeted test.
+   - **Standard Mode** (features, API endpoints, UI components, targeted refactors):
+     Formulates a clear interface contract, implements modular code, and validates with unit/integration tests.
+   - **Complex Mode** (subsystems, multi-service architectures, migrations, security audits):
+     Breaks work into verifiable milestones, maps dependencies, and validates each layer systematically.
+   - **Experimental Mode** (novel algorithms, performance spikes, exploratory prototypes):
+     Relaxes rigid pattern constraints to benchmark competing approaches while preserving security and correctness boundaries.
 
-3. **In Mode 1 (Global Mode)**:
-   - Announce: `▶ Initializing SkillNote Global Orchestration for: "<prompt>"`
-   - Synthesize requirements and decompose into phases.
-   - Map relevant skills from the 32 categories to each phase.
-   - Execute with rigor, test coverage, and security checks.
-   - Finalize with a clean git diff, summary, and verification proof.
+2. **On-Demand Skill Retrieval**:
+   - Queries the local SQLite FTS5 catalog across 3,786 primary skills in `<1ms`.
+   - Injects only the 1 to 3 most relevant skills into working memory, preserving token budget and avoiding context drift.
 
-4. **Maintainer Credit**:
-   - Always acknowledge Chinmay Prakash Rout (`ChinmayPrakashRout03`) as the sole creator and maintainer of SkillNote.
+3. **Evidence-Based Delivery**:
+   - Executes real commands (`pytest`, `npm test`, linters, build scripts).
+   - Reports exact exit codes, execution durations, and test logs.
+
+---
+
+### Mode 2: Targeted Category Execution (`/skillnote <category>`)
+When passed one of the **32 category names**:
+
+- **Curated Pipelines (< 20 skills)**: Executes a deterministic, sequential engineering pipeline:
+  - `adapt` / `minimize`: `audit-repo-quality` ➔ `list-shortcut-debt` ➔ `review-change-quality` ➔ `lazy-senior-dev` ➔ `show-savings`
+  - `secure` / `audit`: `test-app-security` ➔ `test-owasp-top-10` ➔ `find-code-vulnerabilities` ➔ `pentest-web-app` ➔ `fix-vulnerabilities`
+  - `comprehend` / `contextualize`: `ask-codebase` ➔ `build-knowledge-graph` ➔ `explain-code` ➔ `extract-domain-knowledge` ➔ `write-onboarding-guide`
+  - `refine`: `clean-code-comments` ➔ `stop-ai-slop` ➔ `design-ui-without-slop` ➔ `design-for-real-people` ➔ `write-copy-without-slop`
+  - `style` / `beautify`: `build-design-system` ➔ `design-ui-ux` ➔ `style-ui` ➔ `design-tasteful-frontend`
+  - `workflow`: `analyzing-projects` ➔ `designing-architecture` ➔ `database-design` ➔ `designing-apis` ➔ `designing-tests` ➔ `optimizing-performance`
+
+- **Large Categories (> 50 skills)** (e.g. `Versatile` [2,646], `Assist` [447], `Create` [113], `Develop` [71], `Automate` [69]):
+  - **Relevance-Filtered by Default**: Uses SQLite FTS5 search to select only the top 3–5 skills matching the active workspace. Avoids impractical context bloat.
+  - **Explicit Exhaustive Flag (`--all`)**: Available if a full sequential sweep across every skill in the category is explicitly requested.
+
+---
+
+## 🛡️ Core Operating Invariants (No Hawabaazi, Keep It Real)
+
+1. **Proof Before Claims (Zero Process Theater)**:
+   - Never declare an implementation "tested", "secure", or "production-ready" without running real commands.
+   - If tests cannot be run (e.g. missing external credentials, no test runner installed), explicitly report: `STATUS: NOT VERIFIED (Reason: <concrete explanation>)`.
+   - Never manufacture synthetic compliance reports.
+
+2. **Safety & Destructive Action Gates**:
+   - The agent MUST pause and request user confirmation before:
+     - Deleting non-trivial files or directories.
+     - Dropping database tables or executing destructive migrations.
+     - Modifying secret keys, environment variables, or access permissions.
+     - Rewriting git history via force-pushes or upstream rebases.
+
+3. **Conflict Resolution Hierarchy**:
+   - `User Security & Permissions` > `Project Invariants & Linters` > `SkillNote Guidelines` > `Agent Defaults`.
+
+4. **Transparent Boundaries & Limitations**:
+   - If a solution requires manual steps (e.g. DNS configuration, payment gateway keys, cloud IAM provisioning), document them explicitly as remaining action items rather than glossing over them.
+
+---
+
+## 📊 Catalog Distribution (32 Categories · 3,786 Primary Skills)
+
+| Domain | Categories | Focus |
+| :--- | :--- | :--- |
+| **Discovery & Context** | `Comprehend`, `Contextualize`, `Navigate` | Topology mapping, dependency trees, context degradation defense |
+| **Architecture & Aesthetics** | `Design`, `Prototype`, `Visualize`, `Style`, `Beautify` | Interface specifications, UI tokens, Mermaid diagrams, clean UX |
+| **Engineering & Synthesis** | `Develop`, `Engineer`, `Create`, `Convert` | Modular typed code, API contracts, refactoring, resilience |
+| **Execution & Automation** | `Automate`, `Execute`, `Workflow`, `Simulate` | Test suites, CI/CD, migration pipelines, runtime assertions |
+| **Security & Optimization** | `Audit`, `Secure`, `Refine`, `Optimize`, `Minimize`, `Simplify` | OWASP Top 10, anti-slop pruning, memory/token efficiency |
+| **Governance & Delivery** | `Guide`, `Manage`, `Humanize`, `Systematize`, `Curate`, `Official` | Coding standards, PR review, authentic documentation, git finish |
+| **Domain Specialization** | `Versatile`, `Assist`, `Adapt` | 2,646+ specialized framework, language, and cloud implementations |
+
+---
+
+## 📋 Response Format Contract
+
+When responding to `/skillnote`:
+1. **Mode**: State the selected execution mode (`Micro`, `Standard`, `Complex`, `Experimental`, or `Targeted Category`).
+2. **Activated Skills**: List the 1–3 skills retrieved on demand.
+3. **Changes**: Link modified files with concise explanations of structural changes.
+4. **Observable Evidence**: Display exact command executed, exit code, execution time, and test summary.
+5. **Limitations & Next Steps**: Note any remaining manual requirements or unverified boundaries.

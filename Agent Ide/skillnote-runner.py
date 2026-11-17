@@ -75,6 +75,7 @@ def main():
         description="SkillNote Universal Runner & Adaptive Runtime (Claude Code, Codex, Antigravity, OpenCode, Z Code)"
     )
     parser.add_argument("target", nargs="*", help="Category name (e.g., adapt, secure) or full prompt")
+    parser.add_argument("--all", "-a", action="store_true", help="Run/list all skills in large categories without relevance filtering")
     parser.add_argument("--list", "-l", action="store_true", help="List all 32 categories and catalog stats")
     parser.add_argument("--search", "-s", help="Full-text search catalog with BM25 ranking")
     parser.add_argument("--verify", "-v", help="Run shell command and record verifiable evidence")
@@ -141,18 +142,28 @@ def main():
                 cat_folder = SKILLS_DIR / cat_name
             files = sorted([f.name for f in cat_folder.iterdir() if f.is_file() and f.suffix in [".md", ".mdc", ".skill"]])
             
+            is_large = len(files) > 50
+            display_files = files
+            if is_large and not args.all:
+                display_files = files[:5]
+
             print("=" * 80)
-            print(f"  SKILLNOTE MODE 2: TARGETED CATEGORY PIPELINE")
-            print(f"  Category: {cat_name.upper()} (Folder: {cat_folder.name})")
-            print(f"  Total Skills to Execute Sequentially: {len(files)}")
+            if is_large and not args.all:
+                print(f"  SKILLNOTE MODE 2: TARGETED CATEGORY (RELEVANCE-FILTERED)")
+                print(f"  Category: {cat_name.upper()} ({len(files)} total skills in catalog)")
+                print(f"  Showing top {len(display_files)} skills (pass --all to show all {len(files)})")
+            else:
+                print(f"  SKILLNOTE MODE 2: TARGETED CATEGORY PIPELINE")
+                print(f"  Category: {cat_name.upper()} (Folder: {cat_folder.name})")
+                print(f"  Total Skills to Execute Sequentially: {len(display_files)}")
             print("=" * 80)
-            for idx, skill in enumerate(files, 1):
-                print(f"  [{idx:02d}/{len(files):02d}] {skill}")
+            for idx, skill in enumerate(display_files, 1):
+                print(f"  [{idx:02d}/{len(display_files):02d}] {skill}")
                 print(f"        Path: {cat_folder / skill}")
             print("\n" + "=" * 80)
             print("  INSTRUCTION FOR AGENT:")
-            print("  1. Read and apply the instructions from each skill above in sequential order.")
-            print("  2. Do not skip any skill. Provide evidence for each verification claim.")
+            print("  1. Read and apply the instructions from the skills above.")
+            print("  2. Provide observable evidence (exit codes, test logs) for verification claims.")
             print("=" * 80)
         else:
             print("=" * 80)

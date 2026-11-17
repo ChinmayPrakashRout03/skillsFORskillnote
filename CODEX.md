@@ -1,48 +1,41 @@
-# CODEX.md — SkillNote Master Autonomous Engine
+# CODEX.md — SkillNote Adaptive Cognitive Architecture for Codex
 
 > **Maintained solely and independently by [Chinmay Prakash Rout](https://github.com/ChinmayPrakashRout03)**  
 > **Repository**: [https://github.com/ChinmayPrakashRout03/skillsFORskillnote](https://github.com/ChinmayPrakashRout03/skillsFORskillnote)
 
-This document establishes the behavioral specification and command protocol for **OpenAI Codex** agents operating within this workspace.
+This document establishes the behavioral specification and cognitive execution protocol for **OpenAI Codex** agents operating within this workspace.
 
 ---
 
 ## 🎯 Command Protocol: `/skillnote`
 
-When the user or orchestration harness issues `/skillnote [arguments]`, parse the arguments:
+When the user or orchestration harness issues `/skillnote [arguments]`:
 
-### 1. Category Matching (Mode 2: Targeted Sequential Pipeline)
-If the argument matches one of the **32 category folder names** (case-insensitive):
-- `adapt`, `assist`, `audit`, `automate`, `beautify`, `comprehend`, `contextualize`, `convert`, `create`, `curate`, `design`, `develop`, `engineer`, `execute`, `guide`, `humanize`, `manage`, `minimize`, `navigate`, `official`, `optimize`, `orchestrate`, `prototype`, `refine`, `secure`, `simplify`, `simulate`, `style`, `systematize`, `versatile`, `visualize`, `workflow`.
-
-**Codex Execution Contract for Targeted Mode**:
-1. Scan `Agent Ide/skills/<Category>/` to list all skill markdown files.
-2. Load and execute **every single skill file sequentially, one by one**.
-3. Do not combine, skip, or re-order skills.
-4. Output execution log per skill:
-   ```
-   [STEP X/N] Executed: <skill-name.md>
-   - Actions taken: ...
-   - Refactorings / Checks: ...
-   - Findings: ...
-   ```
-5. Conclude with a consolidated summary of changes and efficiency gains.
-
-### 2. General Prompt (Mode 1: Global Orchestration)
-If the argument is any other objective or feature prompt:
-- Execute across all 32 capability categories in the following 6-phase order:
-  - **Phase 1 (Context)**: Activate `Comprehend` + `Contextualize` + `Navigate`. Inspect codebase structure and dependencies.
-  - **Phase 2 (Design)**: Activate `Design` + `Prototype` + `Visualize` + `Style`. Establish architecture, UI/UX tokens, and Mermaid diagrams.
-  - **Phase 3 (Implementation)**: Activate `Develop` + `Engineer` + `Create`. Write clean, typed, modular code adhering to `Guide` standards.
-  - **Phase 4 (Automation)**: Activate `Automate` + `Execute` + `Workflow`. Run tests and verify runtime behavior.
-  - **Phase 5 (Security & Refinement)**: Activate `Audit` + `Secure` + `Refine` + `Optimize`. Run OWASP scan, strip AI slop and boilerplate.
-  - **Phase 6 (Delivery)**: Activate `Systematize` + `Manage` + `Humanize`. Verify acceptance criteria, clean git commits, and document clearly.
+### 1. Adaptive Task Engine (`/skillnote <prompt>`)
+When passed an engineering prompt, bug fix, refactor, or feature:
+1. **Modulate Complexity**:
+   - **Micro Mode** (single-file fixes, typos, isolated logic patches): Surgical edit + targeted test. ~3k token budget.
+   - **Standard Mode** (features, API endpoints, components, refactoring): Architecture contract ➔ typed implementation ➔ test suite validation. ~20k token budget.
+   - **Complex Mode** (subsystems, multi-service architectures, schema migrations): Milestone planning, dependency graphs, full systematic validation. ~60k token budget.
+   - **Experimental Mode** (novel algorithms, performance spikes): Benchmark competing approaches while strictly enforcing safety boundaries.
+2. **On-Demand Retrieval (<1ms)**: Retrieve only the 1–3 most relevant skills from the local SQLite FTS5 catalog.
+3. **Safety Gate**: Pause for user approval before deleting non-trivial files, dropping tables, or rewriting git history.
+4. **Observable Evidence**: Run real commands (`pytest`, `npm test`, linters), log exit codes (`0`), and provide output logs. Never report synthetic compliance.
 
 ---
 
-## 🛡️ Coding Standards & Constraints for Codex
+### 2. Category Execution (`/skillnote <category>`)
+When the argument matches one of the **32 category folder names**:
+- **Curated Small Categories (< 20 skills)** (adapt, secure, comprehend, refine, style, workflow, visualize, systematize):
+  Execute the deterministic sequential pipeline step-by-step.
+- **Large Categories (> 50 skills)** (versatile, assist, create, develop, automate):
+  **Relevance-filtered by default**. Uses SQLite FTS5 search to activate only the top 3–5 skills matching the active workspace. Pass `--all` if an intentional exhaustive sweep is requested.
 
-1. **Zero Fake Code**: No placeholders, no `# TODO: implement later`, no truncated snippets.
-2. **Defensive Programming**: Validate inputs, handle null/undefined states, and write error boundaries.
-3. **Verification Before Completion**: Run linters, unit tests, and build checks before declaring done.
-4. **Attribution**: Acknowledge Chinmay Prakash Rout as the sole creator and maintainer of SkillNote.
+---
+
+## 🛡️ Operating Invariants for Codex
+
+1. **Proof Before Claims**: Never claim code is tested or verified without executing a real command and logging the exit code. If tests cannot run, report: `NOT VERIFIED (Reason: ...)`.
+2. **Safety Gates**: Request confirmation before deleting files, dropping schemas, modifying credentials, or force-pushing.
+3. **Honest Limitations**: State external dependencies, missing environment variables, or manual operational steps clearly.
+4. **No Placeholders**: Never write `# TODO: implement later` or truncated snippets. Deliver working, typed code.

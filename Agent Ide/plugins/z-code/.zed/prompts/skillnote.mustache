@@ -1,8 +1,8 @@
 ---
-description: "Master autonomous engineering engine. Supports /skillnote <prompt> (all skills across 32 categories) or /skillnote <category> (executes all skills inside that folder one by one)."
+description: "Adaptive cognitive architecture for Zed & ZCode. Task-adaptive execution, on-demand skill retrieval, and evidence-based verification across 32 engineering domains."
 ---
 
-# SkillNote Autonomous Engineering Engine (Zed AI)
+# SkillNote Adaptive Engineering Engine (Zed AI & ZCode)
 
 > Maintained solely and independently by Chinmay Prakash Rout (ChinmayPrakashRout03)
 > Repository: https://github.com/ChinmayPrakashRout03/skillsFORskillnote
@@ -10,9 +10,9 @@ description: "Master autonomous engineering engine. Supports /skillnote <prompt>
 User input:
 {{ argument }}
 
-## Execution Instructions for Zed Assistant:
+## Execution Instructions for Assistant:
 
-1. **Check Argument for Category Match**:
+1. **Category vs Task Evaluation**:
    Known categories:
    - `adapt`, `assist`, `audit`, `automate`, `beautify`, `comprehend`,
    - `contextualize`, `convert`, `create`, `curate`, `design`, `develop`,
@@ -21,19 +21,14 @@ User input:
    - `refine`, `secure`, `simplify`, `simulate`, `style`, `systematize`,
    - `versatile`, `visualize`, `workflow`.
 
-2. **If Argument matches a Category (Mode 2: Targeted Sequential Pipeline)**:
-   - Read the directory `Agent Ide/skills/<Category>/`.
-   - Execute **all skills present in that folder one by one in sequence**.
-   - Output individual step logs: `[Skill X/N: <skill-name>]` with findings and actions.
-   - Do not skip any skill.
-   - Conclude with an efficiency and verification summary.
+2. **If Argument matches a Category (Mode 2: Targeted Category)**:
+   - **Small Categories (< 20 skills)** (adapt, secure, comprehend, refine, style, workflow, visualize, systematize):
+     Execute the curated sequential pipeline step-by-step.
+   - **Large Categories (> 50 skills)** (versatile, assist, create, develop, automate):
+     **Relevance-filtered by default**. Pull only the top 3–5 matching skills from SQLite FTS5 index. Use `--all` for exhaustive sweep.
 
-3. **If Argument is a General Prompt (Mode 1: Global Orchestration)**:
-   - Orchestrate across all 32 capability categories.
-   - Execute the 6 phases:
-     1. Comprehend & Contextualize (codebase mapping)
-     2. Architecture & Design (specs, component layout, Mermaid diagrams)
-     3. Implementation (typed, clean, modular code following Guide rules)
-     4. Automation & Execution (test suites, runtime verification)
-     5. Security & Refinement (OWASP audit, anti-slop cleanup, optimization)
-     6. Delivery (clean git history, verification proof, clear summary).
+3. **If Argument is an Engineering Prompt or Task (Mode 1: Adaptive Task Engine)**:
+   - Classify complexity: Micro (single fix) | Standard (feature) | Complex (subsystem) | Experimental (spike).
+   - Pull top 1–3 relevant skills from local catalog via SQLite FTS5 (<1ms).
+   - Enforce safety gate before destructive file/schema/git actions.
+   - Observable evidence: Run real tests and linters, verify exit code `0`, and report logs. Never claim unverified completion.

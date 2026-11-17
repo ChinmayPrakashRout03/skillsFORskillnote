@@ -87,9 +87,11 @@ echo "  ✔ Codex CODEX.md & AGENTS.md copied to workspace root"
 # 5. ZCode App (and Zed AI)
 echo "▶ [5/5] Installing for ZCode App..."
 mkdir -p "$HOME/.zcode/skills/skillnote"
+mkdir -p "$HOME/.zcode/cli/plugins/cache/zcode-plugins-official/skillnote/1.0.0/skills/skillnote"
 mkdir -p "$HOME/.agents/skills/skillnote"
 mkdir -p "$HOME/.claude/skills/skillnote"
 cp "$SCRIPT_DIR/SKILL.md" "$HOME/.zcode/skills/skillnote/SKILL.md"
+cp "$SCRIPT_DIR/SKILL.md" "$HOME/.zcode/cli/plugins/cache/zcode-plugins-official/skillnote/1.0.0/skills/skillnote/SKILL.md"
 cp "$SCRIPT_DIR/SKILL.md" "$HOME/.agents/skills/skillnote/SKILL.md"
 cp "$SCRIPT_DIR/SKILL.md" "$HOME/.claude/skills/skillnote/SKILL.md"
 

@@ -1,25 +1,23 @@
 ---
-description: "Master autonomous engineering engine. Supports /skillnote <prompt> or /skillnote <category>"
-argument-format: "[<category> | <prompt>]"
+description: "Adaptive cognitive architecture for OpenCode. Task-adaptive execution, on-demand skill retrieval, and evidence-based verification across 32 engineering domains."
+argument-format: "[<category> | <prompt>] [--all]"
 ---
 Execute SkillNote on: $ARGUMENTS
 
 **Directives for Assistant**:
 - If `$ARGUMENTS` is empty:
-  Display a concise menu:
-  `SkillNote Master Engine (by Chinmay Prakash Rout)`
-  - **Global Mode**: `/skillnote <your task>` (orchestrates across all 32 categories)
-  - **Targeted Category Pipeline**: `/skillnote <category>` (e.g. `/skillnote adapt`, `/skillnote secure`, `/skillnote engineer`, `/skillnote workflow`)
-  Ask the user what they would like to run.
+  Display menu:
+  `SkillNote Adaptive Engine (by Chinmay Prakash Rout)`
+  - **Adaptive Task Mode**: `/skillnote <your task>` (classifies into Micro/Standard/Complex/Experimental)
+  - **Targeted Category Pipeline**: `/skillnote <category>` (e.g. `/skillnote adapt`, `/skillnote secure`, `/skillnote workflow`, `/skillnote refine`)
+  Ask the user what to run.
 
-- If `$ARGUMENTS` matches any category (adapt, assist, audit, automate, beautify, comprehend, contextualize, convert, create, curate, design, develop, engineer, execute, guide, humanize, manage, minimize, navigate, official, optimize, orchestrate, prototype, refine, secure, simplify, simulate, style, systematize, versatile, visualize, workflow):
-  Navigate to `Agent Ide/skills/<Category>/` and execute **all skills present in that folder sequentially, one by one**. Report progress after each skill.
+- If `$ARGUMENTS` matches any category:
+  - **Small Categories (< 20 skills)** (adapt, secure, comprehend, refine, style, workflow, visualize, systematize): Execute the curated sequential pipeline.
+  - **Large Categories (> 50 skills)** (versatile, assist, create, develop, automate): **Relevance-filtered by default** (select top 3–5 matching skills). Use `--all` for exhaustive sweep.
 
-- If `$ARGUMENTS` is any other task/prompt:
-  Execute full-lifecycle engineering across all 32 categories:
-  1. Comprehend & Contextualize
-  2. Architecture & Design (Mermaid diagrams)
-  3. Clean, typed Implementation
-  4. Test automation & verification
-  5. Security audit (OWASP) & anti-slop refinement
-  6. Git delivery & humanized summary.
+- If `$ARGUMENTS` is any engineering prompt or feature:
+  1. Classify complexity: Micro (single fix) | Standard (feature/refactor) | Complex (subsystem) | Experimental (spike).
+  2. Pull top 1–3 relevant skills from local catalog via SQLite FTS5 (<1ms).
+  3. Safety gate: Require explicit confirmation before destructive file/schema/git actions.
+  4. Observable evidence: Run real tests/linters, record exit codes (`0`) and logs. Never claim unverified success.

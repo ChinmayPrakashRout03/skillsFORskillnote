@@ -21,11 +21,13 @@ This file defines the specialized subagent roster and delegation protocol for **
 
 ---
 
-## 🔄 Sequential Execution Protocol for Category Commands
+## 🔄 Cognitive Execution Protocol for Category Commands
 
 When an agent is invoked via `/skillnote <category>`:
 1. The Lead Agent claims the task and assigns it to the corresponding specialist above.
-2. The specialist reads `Agent Ide/skills/<Category>/` and processes each skill file sequentially.
-3. Every completed skill outputs a verifiable checkpoint before advancing to the next skill.
+2. **Category Handling**:
+   - **Small Categories (< 20 skills)**: Specialist executes the curated sequential pipeline step-by-step.
+   - **Large Categories (> 50 skills)**: Specialist queries the SQLite FTS5 catalog to retrieve only the top 3–5 skills matching the active workspace (or runs full sweep if `--all` is passed).
+3. Every completed skill outputs a verifiable checkpoint (exit code, test logs) before advancing.
 4. If a step fails, the specialist invokes `Engineer` or `Security-Auditor` to remediate before continuing.
 5. All completed steps roll up to `Delivery-Manager` for final reporting.
