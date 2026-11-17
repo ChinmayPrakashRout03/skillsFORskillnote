@@ -1,6 +1,24 @@
 # skillsFORskillnote
 
-**Curated & Maintained by:** [Chinmay Prakash Rout](https://github.com/ChinmayPrakashRout03)
+> **Curated, standardized, and maintained solely and independently by [Chinmay Prakash Rout](https://github.com/ChinmayPrakashRout03)**  
+> **Repository**: [https://github.com/ChinmayPrakashRout03/skillsFORskillnote](https://github.com/ChinmayPrakashRout03/skillsFORskillnote)
+
+---
+
+## ⚡ Quick Install (Zero Download Needed)
+
+Any user on macOS or Linux can install SkillNote across all AI coding agents (**Antigravity**, **Claude Code**, **OpenCode**, **OpenAI Codex**, and **Zed AI**) with a single terminal command — **without manually cloning or downloading the repository**:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ChinmayPrakashRout03/skillsFORskillnote/main/install.sh | bash
+```
+
+This automatically:
+1. Installs the **SkillNote Adaptive Runtime** and pre-indexed SQLite FTS5 catalog.
+2. Configures the `/skillnote` slash command across all active AI coding agents.
+3. Provides a global `skillnote` CLI command in your terminal (`skillnote search`, `skillnote route`, `skillnote verify`).
+
+---
 
 Skills from 32 open-source repositories, reorganized by functional category and curated for local host/IDE use (v14: v13 plus 7 repos — aeon, context-engineering, awesome-copilot, anthropics, jwynia, qodex, claude-workflow-v2).
 

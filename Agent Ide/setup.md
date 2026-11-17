@@ -19,6 +19,18 @@ It standardizes autonomous execution across the top 5 modern AI coding runtimes:
 
 ---
 
+## ⚡ Instant One-Line Install (No Git Clone Needed)
+
+Users can install SkillNote across all supported AI coding agents with a single terminal command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ChinmayPrakashRout03/skillsFORskillnote/main/install.sh | bash
+```
+
+This single command downloads the runtime, indexes the SQLite FTS5 catalog, and configures all 5 Agent IDEs automatically.
+
+---
+
 ## ⚡ Two-Part Execution System
 
 Every platform exposes the universal `/skillnote` slash command and CLI runner, which features dynamic dual-mode routing:
