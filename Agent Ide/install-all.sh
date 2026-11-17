@@ -84,11 +84,18 @@ cp "$SCRIPT_DIR/plugins/codex/AGENTS.md" "$ROOT_DIR/AGENTS.md"
 chmod +x "$SCRIPT_DIR/plugins/codex/codex-skillnote.sh"
 echo "  ✔ Codex CODEX.md & AGENTS.md copied to workspace root"
 
-# 5. Z Code (Zed AI)
-echo "▶ [5/5] Installing for Z Code (Zed AI)..."
+# 5. ZCode App (and Zed AI)
+echo "▶ [5/5] Installing for ZCode App..."
+mkdir -p "$HOME/.zcode/skills/skillnote"
+mkdir -p "$HOME/.agents/skills/skillnote"
+mkdir -p "$HOME/.claude/skills/skillnote"
+cp "$SCRIPT_DIR/SKILL.md" "$HOME/.zcode/skills/skillnote/SKILL.md"
+cp "$SCRIPT_DIR/SKILL.md" "$HOME/.agents/skills/skillnote/SKILL.md"
+cp "$SCRIPT_DIR/SKILL.md" "$HOME/.claude/skills/skillnote/SKILL.md"
+
 mkdir -p "$HOME/.config/zed/prompts"
-cp "$SCRIPT_DIR/plugins/z-code/.zed/prompts/skillnote.mustache" "$HOME/.config/zed/prompts/skillnote.mustache"
-echo "  ✔ Zed AI slash command prompt installed to ~/.config/zed/prompts/skillnote.mustache"
+cp "$SCRIPT_DIR/plugins/z-code/.zed/prompts/skillnote.mustache" "$HOME/.config/zed/prompts/skillnote.mustache" 2>/dev/null || true
+echo "  ✔ ZCode skill installed to ~/.zcode/skills & ~/.agents/skills"
 
 echo ""
 echo "================================================================="
