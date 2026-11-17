@@ -1,0 +1,24 @@
+{
+  "name": "skillnote",
+  "version": "1.0.0",
+  "description": "Master autonomous engineering engine. Supports /skillnote <prompt> for global orchestration across all 3,700+ skills, or /skillnote <category> for sequential execution of all skills in that folder one by one.",
+  "author": {
+    "name": "Chinmay Prakash Rout",
+    "url": "https://github.com/ChinmayPrakashRout03"
+  },
+  "homepage": "https://github.com/ChinmayPrakashRout03/skillsFORskillnote",
+  "repository": "https://github.com/ChinmayPrakashRout03/skillsFORskillnote.git",
+  "keywords": [
+    "claude-code",
+    "skills",
+    "agent-ide",
+    "autonomous-agent",
+    "software-engineering"
+  ],
+  "commands": {
+    "skillnote": {
+      "description": "Execute master SkillNote autonomous engineering engine or category sequential pipeline",
+      "file": "commands/skillnote.md"
+    }
+  }
+}

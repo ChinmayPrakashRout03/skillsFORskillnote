@@ -1,0 +1,21 @@
+{
+  "id": "skillnote",
+  "name": "SkillNote Master Autonomous Engineering Engine",
+  "version": "1.0.0",
+  "author": "Chinmay Prakash Rout (ChinmayPrakashRout03)",
+  "repository": "https://github.com/ChinmayPrakashRout03/skillsFORskillnote",
+  "description": "Master autonomous engineering engine. Supports /skillnote <prompt> (all skills across 32 categories) or /skillnote <category> (executes all skills inside that folder one by one).",
+  "command": "/skillnote",
+  "modes": {
+    "global": {
+      "trigger": "/skillnote <prompt>",
+      "description": "Multi-phase autonomous engineering across all 32 categories and 3,700+ skills"
+    },
+    "targeted": {
+      "trigger": "/skillnote <category>",
+      "description": "Sequential execution of all skills within the specified category folder one by one"
+    }
+  },
+  "categories_count": 32,
+  "skills_directory": "Agent Ide/skills"
+}

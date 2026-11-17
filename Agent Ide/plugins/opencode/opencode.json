@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.schema.json",
+  "name": "skillnote",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chinmay Prakash Rout",
+    "url": "https://github.com/ChinmayPrakashRout03"
+  },
+  "repository": "https://github.com/ChinmayPrakashRout03/skillsFORskillnote",
+  "description": "Master autonomous engineering engine. Supports /skillnote <prompt> (all skills across 32 categories) or /skillnote <category> (executes all skills inside that folder one by one).",
+  "commands": {
+    "skillnote": {
+      "description": "Execute master SkillNote autonomous engineering engine or category sequential pipeline",
+      "template": "Agent Ide/plugins/opencode/commands/skillnote.md"
+    }
+  },
+  "skills": {
+    "directory": "Agent Ide/skills"
+  }
+}
