@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 *.swp
 *.tmp
+
+# SkillNote Evidence Run Traces
+Agent Ide/.skillnote/evidence/
