@@ -19,18 +19,20 @@ A developer-first, local-first framework designed to improve how existing AI age
 
 ---
 
-## ⚡ Quick Install (Zero Download Needed)
+## ⚡ Quick Install: Zero-Disk Cloud Streaming (Recommended)
 
-Install SkillNote across all active AI coding agents (**Antigravity**, **Claude Code**, **OpenCode**, **OpenAI Codex**, and **ZCode.app / Zed**) with a single command — **without manually cloning or downloading the repository**:
+Install SkillNote across all active AI coding agents (**Antigravity**, **Claude Code**, **OpenCode**, **OpenAI Codex**, and **ZCode.app / Zed**) with a single command — **without cloning the git repository or downloading any zip files onto your disk (<1MB total, installs in ~2 seconds)**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ChinmayPrakashRout03/skillsFORskillnote/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/ChinmayPrakashRout03/skillsFORskillnote/main/install-stream.sh | bash
 ```
 
 This automatically:
-1. Installs the **SkillNote Adaptive Runtime** and pre-indexed SQLite FTS5 catalog in `~/.skillnote`.
-2. Configures the `/skillnote` command across all active AI coding agents.
+1. Installs the **Zero-Disk Streaming Runtime** and lightweight index (~1MB) into `~/.skillnote`.
+2. Configures the `/skillnote` command across all active AI coding agents (streams skills dynamically in RAM).
 3. Provides a global `skillnote` CLI utility (`skillnote search`, `skillnote route`, `skillnote verify`).
+
+*(Or, if you prefer a full offline clone with all 3,786 markdown files on your disk, run `curl -fsSL https://raw.githubusercontent.com/ChinmayPrakashRout03/skillsFORskillnote/main/install.sh | bash`)*
 
 ---
 
